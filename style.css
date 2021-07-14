@@ -45,7 +45,91 @@ body {
   transition: 0.5s;
 }
 
-.card .circle:hover:before {
+.card:hover .circle:before {
   clip-path: circle(400px);
   background: darkblue;
+}
+
+.card img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: 0.5s;
+  height: 100%;
+}
+
+.card:hover img {
+  left: 75%;
+  height: 500px;
+}
+
+.card .content {
+  position: relative;
+  width: 50%;
+  transition: 0.5s;
+  margin-left: 50px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.card:hover .content {
+  opacity: 1;
+  visibility: visible;
+}
+
+.card .content h2 {
+  color: white;
+  text-transform: uppercase;
+  font-size: 2em;
+}
+
+.card .content p {
+  color: white;
+  font-weight: 200;
+  margin-bottom: 20px;
+}
+
+.card .content a {
+  position: relative;
+  text-decoration: none;
+  border-radius: 10px;
+  background: white;
+  color: black;
+  padding: 10px 10px;
+  margin-top: 30px;
+  font-weight: 700;
+}
+
+.card .content a:hover {
+  color: grey;
+}
+
+@media (max-width: 990px) {
+  .card {
+    width: auto;
+    max-width: 350px;
+    align-items: flex-start;
+    margin: 10px;
+  }
+
+  .card:hover {
+    height: 600px;
+  }
+
+  .card .content {
+    width: 100%;
+    left: 0;
+    padding: 30px;
+    text-align: center;
+    padding: 0;
+    margin: 20px;
+  }
+
+  .card:hover img {
+    top: 65%;
+    left: 50%;
+    height: 350px;
+  }
 }
